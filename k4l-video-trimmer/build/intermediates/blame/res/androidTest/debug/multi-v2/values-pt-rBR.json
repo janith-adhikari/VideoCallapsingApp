@@ -1,0 +1,82 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/dushansaputhanthri/Documents/Project/VideoApp/k4l-video-trimmer/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-pt-rBR/values-pt-rBR.xml",
+            "map": [
+                {
+                    "source": "/Users/dushansaputhanthri/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.0.0.aar/d8e3b9239a6face4be3c0a747eb86b11/res/values-pt-rBR/values-pt-rBR.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,175,283,406,512,619,708,809,927,1010,1090,1177,1284,1396,1498,1606,1713,1823,1948,2048",
+                        "endColumns": "119,107,122,105,106,88,100,117,82,79,86,106,111,101,107,106,109,124,99,100",
+                        "endOffsets": "170,278,401,507,614,703,804,922,1005,1085,1172,1279,1391,1493,1601,1708,1818,1943,2043,2144"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,26",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,175,283,406,512,619,708,809,927,1010,1090,1177,1284,1396,1498,1606,1713,1823,1948,2258",
+                        "endColumns": "119,107,122,105,106,88,100,117,82,79,86,106,111,101,107,106,109,124,99,100",
+                        "endOffsets": "170,278,401,507,614,703,804,922,1005,1085,1172,1279,1391,1493,1601,1708,1818,1943,2043,2354"
+                    }
+                },
+                {
+                    "source": "/Users/dushansaputhanthri/Documents/Project/VideoApp/k4l-video-trimmer/build/intermediates/bundles/debug/res/values-pt-rBR/values-pt-rBR.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,99,139,179,219",
+                        "endColumns": "43,39,39,39,45",
+                        "endOffsets": "94,134,174,214,260"
+                    },
+                    "to": {
+                        "startLines": "21,22,23,24,25",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "2048,2092,2132,2172,2212",
+                        "endColumns": "43,39,39,39,45",
+                        "endOffsets": "2087,2127,2167,2207,2253"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/dushansaputhanthri/Desktop/k4l-video-trimmer-develop/k4l-video-trimmer/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-pt-rBR/values-pt-rBR.xml",
+            "map": [
+                {
+                    "source": "/Users/dushansaputhanthri/Desktop/k4l-video-trimmer-develop/k4l-video-trimmer/build/intermediates/bundles/debug/res/values-pt-rBR/values-pt-rBR.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,99,139,179,219",
+                        "endColumns": "43,39,39,39,45",
+                        "endOffsets": "94,134,174,214,260"
+                    },
+                    "to": {
+                        "startLines": "21,22,23,24,25",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "2048,2092,2132,2172,2212",
+                        "endColumns": "43,39,39,39,45",
+                        "endOffsets": "2087,2127,2167,2207,2253"
+                    }
+                },
+                {
+                    "source": "/Users/dushansaputhanthri/.gradle/caches/transforms-1/files-1.1/appcompat-v7-24.0.0.aar/d8e3b9239a6face4be3c0a747eb86b11/res/values-pt-rBR/values-pt-rBR.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,175,283,406,512,619,708,809,927,1010,1090,1177,1284,1396,1498,1606,1713,1823,1948,2048",
+                        "endColumns": "119,107,122,105,106,88,100,117,82,79,86,106,111,101,107,106,109,124,99,100",
+                        "endOffsets": "170,278,401,507,614,703,804,922,1005,1085,1172,1279,1391,1493,1601,1708,1818,1943,2043,2144"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,26",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,175,283,406,512,619,708,809,927,1010,1090,1177,1284,1396,1498,1606,1713,1823,1948,2258",
+                        "endColumns": "119,107,122,105,106,88,100,117,82,79,86,106,111,101,107,106,109,124,99,100",
+                        "endOffsets": "170,278,401,507,614,703,804,922,1005,1085,1172,1279,1391,1493,1601,1708,1818,1943,2043,2354"
+                    }
+                }
+            ]
+        }
+    ]
+}
