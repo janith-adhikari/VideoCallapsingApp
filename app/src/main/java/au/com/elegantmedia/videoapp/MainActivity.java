@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int WRITE_PERMISSION = 23;
     SimpleExoPlayerView mSimpleExoPlayerView;
     SimpleExoPlayer mSimpleExoPlayer;
-    String videoURL = "http://techslides.com/demos/sample-videos/small.mp4";
+    String videoURL = "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
     private DefaultBandwidthMeter bandwidthMeter;
     private DefaultDataSourceFactory mediaDataSourceFactory;
     private DefaultTrackSelector trackSelector;
