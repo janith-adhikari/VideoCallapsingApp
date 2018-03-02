@@ -6,6 +6,8 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -43,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
     private static final int VIDEO_GALLERY_REQUEST = 11;
     private static final int TRIMMER_REQUEST = 22;
     private static final int WRITE_PERMISSION = 23;
-    SimpleExoPlayerView mSimpleExoPlayerView;
+
+
     SimpleExoPlayer mSimpleExoPlayer;
     String videoURL = "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
     private DefaultBandwidthMeter bandwidthMeter;
@@ -51,16 +54,28 @@ public class MainActivity extends AppCompatActivity {
     private DefaultTrackSelector trackSelector;
     private boolean shouldAutoPlay = false;
 
+    @BindView(R.id.video_layout)
+    ConstraintLayout mLayout;
+    @BindView(R.id.video)
+    SimpleExoPlayerView mSimpleExoPlayerView;
     @BindView(R.id.img_btn_play)
     ImageButton imgBtnPlay;
+    @BindView(R.id.appbar)
+    AppBarLayout mAppBarLayout;
+
     private Uri uri;
+    private boolean isPlayerPause = false;
+
+    @OnClick(R.id.video_layout)
+    public void onClickVideo() {
+        pausePlayer();
+    }
 
     @OnClick(R.id.img_btn_play)
     public void onClickPlay() {
         shouldAutoPlay = true;
-        mSimpleExoPlayer.seekTo(0);
         mSimpleExoPlayer.setPlayWhenReady(shouldAutoPlay);
-        imgBtnPlay.setVisibility(View.GONE);
+        startPlayer();
     }
 
     @OnClick(R.id.img_profile_pic)
@@ -88,9 +103,23 @@ public class MainActivity extends AppCompatActivity {
         bandwidthMeter = new DefaultBandwidthMeter();
         mediaDataSourceFactory = new DefaultDataSourceFactory(this, Util.getUserAgent(this, "mediaPlayerSample"), (TransferListener<? super DataSource>) bandwidthMeter);
 
-        mSimpleExoPlayerView = (SimpleExoPlayerView) findViewById(R.id.video);
-
         uri = Uri.parse(videoURL);
+
+        mAppBarLayout.addOnOffsetChangedListener(new AppBarStateChangeListener() {
+            @Override
+            public void onStateChanged(AppBarLayout appBarLayout, State state) {
+                switch (state) {
+                    case COLLAPSED:
+                        pausePlayer();
+                        break;
+                    /*case EXPANDED:
+                        startPlayer();
+                        break;*/
+                }
+            }
+        });
+
+        initializePlayer(uri);
     }
 
     @Override
@@ -211,44 +240,53 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        if (Util.SDK_INT > 23) {
-            initializePlayer(uri);
-        }
+
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        if ((Util.SDK_INT <= 23 || mSimpleExoPlayer == null)) {
-            initializePlayer(uri);
-        }
+        startPlayer();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        if (Util.SDK_INT <= 23) {
-            releasePlayer();
-        }
+        pausePlayer();
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        if (Util.SDK_INT > 23) {
-            releasePlayer();
-        }
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        releasePlayer();
     }
 
     private void pausePlayer() {
-        if (shouldAutoPlay)
+        if (shouldAutoPlay) {
             mSimpleExoPlayer.setPlayWhenReady(false);
-        mSimpleExoPlayer.getPlaybackState();
+            mSimpleExoPlayer.getPlaybackState();
+            imgBtnPlay.setVisibility(View.VISIBLE);
+            //isPlayerPause = true;
+            //imgBtnPlay.setImageResource(R.drawable.ic_action_pause);
+        }
+
     }
 
     private void startPlayer() {
-        if (shouldAutoPlay)
+        if (mSimpleExoPlayer != null && shouldAutoPlay) {
             mSimpleExoPlayer.setPlayWhenReady(true);
-        mSimpleExoPlayer.getPlaybackState();
+            mSimpleExoPlayer.getPlaybackState();
+            imgBtnPlay.setVisibility(View.GONE);
+            //isPlayerPause = false;
+            //imgBtnPlay.setImageResource(R.drawable.ic_action_play);
+        }
     }
+
+
 }
